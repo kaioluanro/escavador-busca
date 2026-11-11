@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for j in range(0,8) %}
+<div class="mt-5 h-100 d-flex align-items-center justify-content-center">
+        <div class="row w-100">
+                <span class="font-h1-2 fs-5 text-center">TERMO PORCURADO</span>
+                <span class="mt-1 font-h1-1 fs-3 color-gray text-center">
+                        <span>-&nbsp;</span>
+                        <span><u>LEI 1.870</u></span=>
+                        <span>&nbsp;-</span=>
+                </span>
+                <div class="mt-2 row justify-content-center">
+                        <div class="col-md-11">
+                                <div class="card bg-color-gray">
+                                        <div class="mt-2 card-body div-limited">
+                                                {% for i in range(0,3) %}
+                                                <p class="mt-1 text-break text-start font-h1-2 fs-4 font-head color-yellow">
+                                                        <img src="{{ url_for('static', filename='img/doc_icon.svg') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top color-whiter">
+                                                        |>&nbsp;&nbsp;
+                                                        <a class="color-whiter font-head fs-4" href="https://dom.pmt.pi.gov.br/admin/upload/DOM3526-26052023-ASSINADO.pdf">{{i}}</a>
+                                                        &nbsp;&nbsp;
+                                                        |>&nbsp;&nbsp;
+                                                        página : 
+                                                        <span class="color-whiter font-head fs-4"> 2</span>
+                                                        |>&nbsp;&nbsp;
+                                                        pontiação : 
+                                                        <span class="color-whiter font-head fs-4"> 100</span>
+                                                </p>
+                                                {% endfor %}
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,83 @@
+{% block panelInfo %}
+<div class="d-flex align-items-center justify-content-center h-100">
+    <div class="col-md-7">
+        <div class="d-flex justify-content-center text-center color-font">
+
+            <div>
+                <span class="font-h1-3 fs-3">-<u> FILTRO TEMPEORAL </u>-</span>
+                <div class="d-flex justify-content-center text-start">
+                    <div class="me-2">
+                        <span class="font-h1-2-r fs-5">Dia</span>
+                        <select name="start_day" class="form-select font-h1-1 fs-3 color-whiter" style="width: 85px;" aria-label="dia">
+                            {% for i in range(1,32) %}
+                                {% if i == current_day %}
+                                    <option selected="selected" value="{{i}}">{{i}}</option>
+                                {% else %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="me-2">
+                        <span class="font-h1-2-r fs-5">Mês</span>
+                        <select name="start_month" class="form-select font-h1-1 fs-3" style="width: 85px;" aria-label="dia">
+                            {% for i in range(1,13) %}
+                                {% if i == current_month %}
+                                    <option selected="selected" value="{{i}}">{{i}}</option>
+                                {% else %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="me-2">
+                        <span class="font-h1-2-r fs-5">Ano</span>
+                        <select name="start_year" class="form-select font-h1-1 fs-3" style="width: 125px;" aria-label="dia">
+                            {% for year in years %}
+                                {% if year == current_year %}
+                                    <option selected="selected" value="{{year}}">{{year}}</option>
+                                {% else %}
+                                    <option value="{{year}}">{{year}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="me-5 some-container d-flex align-items-end">
+                        <span class="font-h1-2-r fs-3">até</span>
+                    </div>
+                    <div class="me-2">
+                        <span class="font-h1-2-r fs-5 ">Dia</span>
+                        <select name="end_day" class="form-select font-h1-1 fs-3" style="width: 85px;" aria-label="dia">
+                            {% for i in range(1,32) %}
+                            
+                            <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="me-2">
+                        <span class="font-h1-2-r fs-5">Mês</span>
+                        <select name="end_month" class="form-select font-h1-1 fs-3" style="width: 85px;" aria-label="dia">
+                            {% for i in range(1,13) %}
+                            <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="me-2">
+                        <span class="font-h1-2-r fs-5">Ano</span>
+                        <select name="end_year" class="form-select font-h1-1 fs-3" style="width: 125px;" aria-label="dia">
+                            {% for year in years %}
+                                {% if year == (current_year - 2) %}
+                                    <option selected="selected" value="{{year}}">{{year}}</option>
+                                {% else %}
+                                    <option value="{{year}}">{{year}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock panelInfo %}
